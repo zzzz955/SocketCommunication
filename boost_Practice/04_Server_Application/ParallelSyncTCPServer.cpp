@@ -57,7 +57,8 @@ public:
 
         m_acceptor.accept(*sock);  // 연결 수락
 
-        (new Service)->StartHandlingClient(sock);  // 클라이언트 처리 시작
+        auto service = std::make_shared<Service>();
+        service->StartHandlingClient(sock);  // 클라이언트 처리 시작
     }
 
 private:
