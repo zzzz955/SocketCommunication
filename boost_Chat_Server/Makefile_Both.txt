@@ -1,0 +1,38 @@
+# Compiler and flags
+CXX = g++
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
+LDFLAGS = -lboost_system -lpthread
+
+# Targets
+SERVER_TARGET = server
+CLIENT_TARGET = client
+
+# Source files
+SERVER_SRC = server.cpp
+CLIENT_SRC = client.cpp
+
+# Object files
+SERVER_OBJ = $(SERVER_SRC:.cpp=.o)
+CLIENT_OBJ = $(CLIENT_SRC:.cpp=.o)
+
+# Build both server and client
+all: $(SERVER_TARGET) $(CLIENT_TARGET)
+
+# Build server
+$(SERVER_TARGET): $(SERVER_OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+# Build client
+$(CLIENT_TARGET): $(CLIENT_OBJ)
+	$(CXX) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+# Object file rules
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Clean build files
+clean:
+	rm -f $(SERVER_OBJ) $(CLIENT_OBJ) $(SERVER_TARGET) $(CLIENT_TARGET)
+
+# Phony targets
+.PHONY: all clean
