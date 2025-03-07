@@ -1,0 +1,14 @@
+{
+  "OutputFoldersPerTargetSystem": {
+    "Local Machine": [
+      "GameSocketServer\\out\\build\\x64-debug",
+      "GameSocketServer\\out\\install\\x64-debug",
+      "GameSocketServer\\out\\build\\x64-release",
+      "GameSocketServer\\out\\install\\x64-release",
+      "GameSocketServer\\out\\build\\x86-debug",
+      "GameSocketServer\\out\\install\\x86-debug",
+      "GameSocketServer\\out\\build\\x86-release",
+      "GameSocketServer\\out\\install\\x86-release"
+    ]
+  }
+}
