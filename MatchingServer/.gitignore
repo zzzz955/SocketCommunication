@@ -1,0 +1,99 @@
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Ww][Ii][Nn]32/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+
+# 컴파일 결과물
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+*.out
+*.app
+
+# 빌드 디렉토리
+/build/
+/out/
+/Debug/
+/Release/
+/x64/
+/bin/
+/lib/
+/cmake-build-*/
+
+# Visual Studio 파일
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.vcxproj.filters
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.opensdf
+*.sdf
+*.cachefile
+*.VC.db
+*.VC.VC.opendb
+
+# VSCode 파일
+.vscode/
+.code-workspace
+
+# Clion 파일
+.idea/
+cmake-build-*/
+
+# vcpkg 관련 파일
+/vcpkg_installed/
+
+# CMake 관련 파일
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+
+# 의존성 관리
+/node_modules/
+/packages/
+
+# 시스템 파일
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 로그 파일
+*.log
+
+# 환경 설정 파일
+.env
+.env.local
+
+# 데이터베이스 파일
+*.sqlite
+*.db
+
+# 사용자 지정 백업 파일
+*~
+*.bak
+*.swp
+
+# DB 관련
+postgres-data/

@@ -1,0 +1,41 @@
+services:
+  cpp-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: matching-server
+    ports:
+      - "8080:8080"
+    environment:
+      - SERVER_PORT=${SERVER_PORT}
+      - SERVER_VERSION=${SERVER_VERSION}
+      - DB_HOST=${DB_HOST}
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+    depends_on:
+      - postgres
+    networks:
+      - sockets-network
+    restart: unless-stopped
+  
+  postgres:
+    image: postgres:14
+    container_name: postgres-db
+    expose:
+      - "5432"
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+    volumes:
+      - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql # For initialization scripts
+      - ./postgres-data:/var/lib/postgresql/data # Bind mount for persistent data
+    networks:
+      - sockets-network
+    restart: unless-stopped
+
+networks:
+  sockets-network:
+    driver: bridge

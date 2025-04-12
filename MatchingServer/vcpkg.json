@@ -1,0 +1,15 @@
+{
+  "name": "game-socket-server",
+  "version": "1.0.0",
+    "dependencies": [
+        "boost-system",
+        "boost-asio",
+        "boost-beast",
+        "boost-uuid",
+        "libpqxx",
+        "nlohmann-json",
+        "spdlog",
+        "fmt",
+        "openssl"
+    ]
+}
